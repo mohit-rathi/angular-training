@@ -1,0 +1,31 @@
+main {
+	display: flex;
+	flex-direction: column;
+
+	.section-primary {
+		padding: 1.5rem;
+		flex: 70%;
+	}
+	
+	.section-secondary {
+		flex: 30%;
+	}
+}
+
+// tablet
+@media screen and (min-width: 600px) {
+
+	main {
+		flex-direction: row;
+	}
+
+}
+
+// desktop
+@media screen and (min-width: 900px) {
+
+	main {
+		flex-direction: row;
+	}
+
+}
