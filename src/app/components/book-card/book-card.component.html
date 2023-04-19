@@ -1,9 +1,19 @@
 <div class="card">
-	<img [src]="imageUrl" [alt]="title" class="card-img-top">
-	<div class="card-body">
-		<h5 class="card-title">{{title}}</h5>
-		<p class="card-text">by {{author}}</p>
-		<p class="card-text">{{description}}</p>
-		<button class="btn btn-primary" type="button" (click)="displayBookTitle(title)">Read More</button>
-	</div>
+  <img [src]="book.imageUrl" [alt]="book.title" class="card-img-top" />
+  <div class="card-body d-flex flex-column justify-content-between">
+    <div class="mb-4">
+      <h5 class="card-title">{{ book.title }}</h5>
+      <p class="card-text">by {{ book.author }}</p>
+      <p class="card-text">{{ book.description }}</p>
+    </div>
+    <div>
+      <button
+        class="btn btn-primary"
+        type="button"
+        (click)="displayBookTitle(book.title)"
+      >
+        Read More
+      </button>
+    </div>
+  </div>
 </div>

@@ -6,10 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./book-card.component.scss'],
 })
 export class BookCardComponent {
-  @Input() title: string = '';
-  @Input() author: string = '';
-  @Input() description: string = '';
-  @Input() imageUrl: string = '';
+  @Input() book: any;
 
   displayBookTitle = (title: string) => {
     console.log(title);

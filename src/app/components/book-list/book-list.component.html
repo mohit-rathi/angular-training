@@ -1,5 +1,5 @@
 <ul class="cards-wrapper">
-	<li *ngFor="let book of books">
-		<app-book-card [title]="book.title" [author]="book.author" [description]="book.description" [imageUrl]="book.imageUrl"></app-book-card>
-	</li>
+  <li *ngFor="let book of books">
+    <app-book-card [book]="book"></app-book-card>
+  </li>
 </ul>

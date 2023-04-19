@@ -16,13 +16,10 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     SidebarComponent,
     BookListComponent,
-    BookCardComponent
+    BookCardComponent,
   ],
-  imports: [
-    BrowserModule,
-		FormsModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
