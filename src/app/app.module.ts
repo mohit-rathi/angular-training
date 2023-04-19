@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookCardComponent } from './components/book-card/book-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BookCardComponent } from './components/book-card/book-card.component';
     BookCardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+		FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

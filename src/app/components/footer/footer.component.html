@@ -1,5 +1,18 @@
-<footer class="container-fluid py-5 px-4 bg-dark">
-	<p class="mb-0 text-center text-white">
-		&copy; 2023 BookShop.com, Inc. all rights reserved.
-	</p>
+<footer class="container-fluid px-0 py-5 bg-dark text-white">
+	<div class="container">
+		<section class="mb-5">
+			<form>
+				<div class=""></div>
+				<label for="subscribe" class="form-label">Subscribe to stay updated on latest deals and offers</label>
+				<input class="form-control" type="email" id="subscribe" name="email" [value]="email" [(ngModel)]="email" placeholder="Enter your email">
+				<p class="text-white">Hello {{email}}</p>
+				<button type="button" class="btn btn-primary">Subscribe</button>
+			</form>
+		</section>
+	</div>
+	<section class="container">
+		<p class="mb-0 text-center text-white">
+			&copy; 2023 BookShop.com, Inc. all rights reserved.
+		</p>
+	</section>
 </footer>

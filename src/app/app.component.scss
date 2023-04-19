@@ -4,28 +4,34 @@ main {
 
 	.section-primary {
 		padding: 1.5rem;
-		flex: 70%;
+		flex: 0%;
 	}
 	
 	.section-secondary {
-		flex: 30%;
+		flex: 100%;
 	}
 }
 
+// media queries
+
 // tablet
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 576px) {
 
 	main {
-		flex-direction: row;
+		flex-direction: column;
 	}
 
 }
 
 // desktop
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 992px) {
 
 	main {
 		flex-direction: row;
+
+		.section-secondary {
+			max-width: 250px;
+		}
 	}
 
 }

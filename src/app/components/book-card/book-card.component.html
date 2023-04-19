@@ -1,7 +1,9 @@
 <div class="card">
+	<img [src]="imageUrl" [alt]="title" class="card-img-top">
 	<div class="card-body">
 		<h5 class="card-title">{{title}}</h5>
+		<p class="card-text">by {{author}}</p>
 		<p class="card-text">{{description}}</p>
-		<a href="#" class="btn btn-primary">Read More</a>
+		<button class="btn btn-primary" type="button" (click)="displayBookTitle(title)">Read More</button>
 	</div>
 </div>
