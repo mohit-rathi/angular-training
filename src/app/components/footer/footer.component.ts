@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class FooterComponent {
   email: string = '';
   emailRegex = /^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,})+$/;
+  currentYear: string = new Date().getFullYear().toString();
 
   subscribe = () => {
     if (this.email === '') {

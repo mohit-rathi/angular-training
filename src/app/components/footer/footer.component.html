@@ -1,30 +1,60 @@
 <footer class="container-fluid px-0 py-5 bg-dark">
-  <div class="container">
-    <section
-      class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between mb-5"
-    >
-      <div class="mb-2 mb-md-0">
-        <p class="mb-0 text-white">Subscribe to stay updated</p>
+  <section class="container mb-3">
+    <div class="row text-white text-center">
+      <div class="col-xs col-sm-6 col-md-3 d-flex flex-column mb-4">
+        <span class="mb-2 fs-5 fw-semibold">Title 1</span>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 1</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 2</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 3</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 4</a>
       </div>
-      <form class="d-flex">
-        <input
-          class="form-control me-2"
-          type="email"
-          id="subscribe"
-          name="email"
-          [value]="email"
-          [(ngModel)]="email"
-          placeholder="Enter your email"
-        />
-        <button class="btn btn-light" type="button" (click)="subscribe()">
-          Subscribe
-        </button>
-      </form>
-    </section>
-  </div>
+      <div class="col-xs col-sm-6 col-md-3 d-flex flex-column mb-4">
+        <span class="mb-2 fs-5 fw-semibold">Title 2</span>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 5</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 6</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 7</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 8</a>
+      </div>
+      <div class="col-xs col-sm-6 col-md-3 d-flex flex-column mb-4">
+        <span class="mb-2 fs-5 fw-semibold">Title 3</span>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 9</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 10</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 11</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 12</a>
+      </div>
+      <div class="col-xs col-sm-6 col-md-3 d-flex flex-column mb-4">
+        <span class="mb-2 fs-5 fw-semibold">Title 4</span>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 13</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 14</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 15</a>
+        <a href="#" class="mb-1 text-decoration-none text-white">link 16</a>
+      </div>
+    </div>
+  </section>
+  <section
+    class="container d-flex flex-column flex-md-row align-items-md-center justify-content-md-between mb-5"
+  >
+    <div class="mb-2 mb-md-0">
+      <p class="mb-0 text-white">Subscribe to stay updated</p>
+    </div>
+    <form class="d-flex">
+      <input
+        class="form-control me-2"
+        type="email"
+        id="subscribe"
+        name="email"
+        [value]="email"
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+      />
+      <button class="btn btn-light" type="button" (click)="subscribe()">
+        Subscribe
+      </button>
+    </form>
+  </section>
   <section class="container">
     <p class="mb-0 text-center text-white">
-      &copy; 2023 BookShop.com, Inc. all rights reserved.
+      &copy; {{ currentYear }} BookShop.com, Inc. all rights reserved.
     </p>
   </section>
 </footer>
