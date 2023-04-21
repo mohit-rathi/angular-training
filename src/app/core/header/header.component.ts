@@ -11,32 +11,32 @@ export class HeaderComponent {
   public hyperlinkList: INavLink[] = [
     {
       title: 'Dashboard',
-      href: 'https://www.google.com',
+      href: '#',
       isActive: true,
     },
     {
       title: "Today's Deal",
-      href: 'https://www.google.com',
+      href: '#',
       isActive: false,
     },
     {
       title: 'Mobile',
-      href: 'https://www.google.com',
+      href: '#',
       isActive: false,
     },
     {
       title: 'Eloctronics',
-      href: 'https://www.google.com',
+      href: '#',
       isActive: false,
     },
     {
       title: 'Customer Service',
-      href: 'https://www.google.com',
+      href: '#',
       isActive: false,
     },
     {
       title: 'About',
-      href: 'https://www.google.com',
+      href: '#',
       isActive: false,
     },
   ];
