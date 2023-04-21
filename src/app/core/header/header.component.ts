@@ -7,8 +7,8 @@ import { INavLink } from '../interfaces/nav-link.interface';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  navbarTitle: string = 'Book Shop';
-  hyperLinks: INavLink[] = [
+  public navbarTitle: string = 'Book Shop';
+  public hyperlinkList: INavLink[] = [
     {
       title: 'Dashboard',
       href: 'https://www.google.com',

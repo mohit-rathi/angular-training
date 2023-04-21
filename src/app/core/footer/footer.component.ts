@@ -6,11 +6,99 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
-  email: string = '';
-  emailRegex = /^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,})+$/;
-  currentYear: string = new Date().getFullYear().toString();
+  public email: string = '';
+  public emailRegex: RegExp = /^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,})+$/;
 
-  subscribe = () => {
+  public currentYear: string = new Date().getFullYear().toString();
+
+  public hyperlinkSections = [
+    {
+      title: 'Title 1',
+      hyperlinkList: [
+        {
+          title: 'link 1',
+          href: '#',
+        },
+        {
+          title: 'link 2',
+          href: '#',
+        },
+        {
+          title: 'link 3',
+          href: '#',
+        },
+        {
+          title: 'link 4',
+          href: '#',
+        },
+      ],
+    },
+    {
+      title: 'Title 2',
+      hyperlinkList: [
+        {
+          title: 'link 5',
+          href: '#',
+        },
+        {
+          title: 'link 6',
+          href: '#',
+        },
+        {
+          title: 'link 7',
+          href: '#',
+        },
+        {
+          title: 'link 8',
+          href: '#',
+        },
+      ],
+    },
+    {
+      title: 'Title 3',
+      hyperlinkList: [
+        {
+          title: 'link 9',
+          href: '#',
+        },
+        {
+          title: 'link 10',
+          href: '#',
+        },
+        {
+          title: 'link 11',
+          href: '#',
+        },
+        {
+          title: 'link 12',
+          href: '#',
+        },
+      ],
+    },
+    {
+      title: 'Title 4',
+      hyperlinkList: [
+        {
+          title: 'link 13',
+          href: '#',
+        },
+        {
+          title: 'link 14',
+          href: '#',
+        },
+        {
+          title: 'link 15',
+          href: '#',
+        },
+        {
+          title: 'link 16',
+          href: '#',
+        },
+      ],
+    },
+  ];
+
+  public subscribe(): void {
     if (this.email === '') {
       alert('Email is required.');
     } else if (!this.emailRegex.test(this.email)) {
@@ -18,5 +106,5 @@ export class FooterComponent {
     } else {
       alert(`Your email ${this.email} has been added to our mailing list.`);
     }
-  };
+  }
 }

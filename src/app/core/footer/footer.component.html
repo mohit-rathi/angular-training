@@ -1,33 +1,17 @@
 <footer class="container-fluid px-0 py-5 bg-dark">
   <section class="container mb-3">
     <div class="row text-white text-center">
-      <div class="col-xs col-sm-6 col-md-3 d-flex flex-column mb-4">
-        <span class="mb-2 fs-5 fw-semibold">Title 1</span>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 1</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 2</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 3</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 4</a>
-      </div>
-      <div class="col-xs col-sm-6 col-md-3 d-flex flex-column mb-4">
-        <span class="mb-2 fs-5 fw-semibold">Title 2</span>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 5</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 6</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 7</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 8</a>
-      </div>
-      <div class="col-xs col-sm-6 col-md-3 d-flex flex-column mb-4">
-        <span class="mb-2 fs-5 fw-semibold">Title 3</span>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 9</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 10</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 11</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 12</a>
-      </div>
-      <div class="col-xs col-sm-6 col-md-3 d-flex flex-column mb-4">
-        <span class="mb-2 fs-5 fw-semibold">Title 4</span>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 13</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 14</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 15</a>
-        <a href="#" class="mb-1 text-decoration-none text-white">link 16</a>
+      <div
+        class="col-xs col-sm-6 col-md-3 d-flex flex-column mb-4"
+        *ngFor="let section of hyperlinkSections"
+      >
+        <span class="mb-2 fs-5 fw-semibold">{{ section.title }}</span>
+        <a
+          *ngFor="let link of section.hyperlinkList"
+          [href]="link.href"
+          class="mb-1 text-decoration-none text-white"
+          >{{ link.title }}</a
+        >
       </div>
     </div>
   </section>

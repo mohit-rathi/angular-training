@@ -7,7 +7,7 @@ import { IBook } from '../interfaces/book.interface';
   styleUrls: ['./book-list.component.scss'],
 })
 export class BookListComponent {
-  books: IBook[] = [
+  public books: IBook[] = [
     {
       title: 'Eloquent JavaScript, Third Edition',
       author: 'John Doe',
