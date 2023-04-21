@@ -15,16 +15,22 @@
     Add to List
   </button>
 </form>
-<ng-container *ngIf="usernameList.length > 0">
-  <div class="card ms-4">
-    <ul class="list-group list-group-flush">
-      <li
-        *ngFor="let username of usernameList; index as i"
-        class="list-group-item d-flex justify-content-between align-items-center"
-      >
-        {{ username }}
-        <button class="btn btn-danger" (click)="deleteUser(i)">Delete</button>
-      </li>
-    </ul>
-  </div>
-</ng-container>
+<div class="card ms-4">
+  <div class="card-header">Users</div>
+  <ul class="list-group list-group-flush">
+    <ng-container [ngSwitch]="usernameList.length > 0">
+      <ng-container *ngSwitchCase="true">
+        <li
+          *ngFor="let username of usernameList; index as i"
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          {{ username }}
+          <button class="btn btn-danger" (click)="deleteUser(i)">Delete</button>
+        </li>
+      </ng-container>
+      <ng-container *ngSwitchCase="false">
+        <li class="list-group-item">No users</li>
+      </ng-container>
+    </ng-container>
+  </ul>
+</div>
