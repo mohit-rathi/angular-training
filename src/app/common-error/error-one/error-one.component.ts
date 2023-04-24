@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+
+// services
 import { LoggerService } from '../services/logger.service';
 
 @Component({

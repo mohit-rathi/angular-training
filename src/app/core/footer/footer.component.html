@@ -1,8 +1,51 @@
-<footer class="container-fluid px-0 py-5 bg-dark">
-  <section class="container mb-3">
-    <div class="row text-white text-center">
+<footer class="container-fluid py-4 bg-dark text-white">
+  <!-- follow on social networks -->
+  <section class="container mb-4 d-flex justify-content-center">
+    <a class="me-5 text-reset" href="https://www.facebook.com/">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a class="me-5 text-reset" href="https://twitter.com/">
+      <i class="fa-brands fa-twitter"></i>
+    </a>
+    <a class="me-5 text-reset" href="https://www.instagram.com/">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a class="me-5 text-reset" href="https://in.linkedin.com/">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+    <a class="text-reset" href="https://github.com/">
+      <i class="fa-brands fa-github"></i>
+    </a>
+  </section>
+  <!-- subscribe -->
+  <section class="container mb-4">
+    <form class="row g-3 d-flex align-items-center justify-content-center">
+      <div class="col-auto">
+        <p class="mb-0">Sign up to stay updated</p>
+      </div>
+      <div class="col-12 col-md-5">
+        <input
+          class="form-control me-2"
+          type="email"
+          id="subscribe"
+          name="email"
+          [value]="email"
+          [(ngModel)]="email"
+          placeholder="Enter your email"
+        />
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-light" type="button" (click)="subscribe()">
+          Subscribe
+        </button>
+      </div>
+    </form>
+  </section>
+  <!-- useful links -->
+  <section class="container mb-4">
+    <div class="row g-4 text-center">
       <div
-        class="col-xs col-sm-6 col-md-3 d-flex flex-column mb-4"
+        class="col-xs col-sm-6 col-md-3 d-flex flex-column"
         *ngFor="let section of hyperlinkSections"
       >
         <span class="mb-2 fs-5 fw-semibold">{{ section.title }}</span>
@@ -15,29 +58,9 @@
       </div>
     </div>
   </section>
-  <section
-    class="container d-flex flex-column flex-md-row align-items-md-center justify-content-md-between mb-5"
-  >
-    <div class="mb-2 mb-md-0">
-      <p class="mb-0 text-white">Subscribe to stay updated</p>
-    </div>
-    <form class="d-flex">
-      <input
-        class="form-control me-2"
-        type="email"
-        id="subscribe"
-        name="email"
-        [value]="email"
-        [(ngModel)]="email"
-        placeholder="Enter your email"
-      />
-      <button class="btn btn-light" type="button" (click)="subscribe()">
-        Subscribe
-      </button>
-    </form>
-  </section>
+  <!-- copyright -->
   <section class="container">
-    <p class="mb-0 text-center text-white">
+    <p class="mb-0 text-center">
       &copy; {{ currentYear }} BookShop.com, Inc. all rights reserved.
     </p>
   </section>
