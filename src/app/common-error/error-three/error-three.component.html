@@ -1,1 +1,6 @@
-<div class="container-fluid p-4">error-three works!</div>
+<li class="list-group-item d-flex justify-content-between align-items-center">
+  {{ user.username }}
+  <button class="btn btn-sm btn-danger" (click)="deleteUsername(user.id)">
+    Delete
+  </button>
+</li>

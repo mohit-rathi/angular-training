@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-  public sidebarTitle: string = 'Apply Filters';
+  public sidebarTitle: string = 'Filters';
 
   public priceRangeList = [
     {

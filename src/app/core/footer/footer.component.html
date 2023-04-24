@@ -1,24 +1,16 @@
-<footer class="container-fluid py-4 bg-dark text-white">
+<footer class="container-fluid py-5 bg-dark text-white">
   <!-- follow on social networks -->
-  <section class="container mb-4 d-flex justify-content-center">
-    <a class="me-5 text-reset" href="https://www.facebook.com/">
-      <i class="fa-brands fa-facebook-f"></i>
-    </a>
-    <a class="me-5 text-reset" href="https://twitter.com/">
-      <i class="fa-brands fa-twitter"></i>
-    </a>
-    <a class="me-5 text-reset" href="https://www.instagram.com/">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-    <a class="me-5 text-reset" href="https://in.linkedin.com/">
-      <i class="fa-brands fa-linkedin-in"></i>
-    </a>
-    <a class="text-reset" href="https://github.com/">
-      <i class="fa-brands fa-github"></i>
+  <section class="container mb-5 d-flex justify-content-center">
+    <a
+      class="me-5 text-reset"
+      *ngFor="let link of socialNetworkLinkList"
+      [href]="link.href"
+    >
+      <i [ngClass]="link.iconClass"></i>
     </a>
   </section>
   <!-- subscribe -->
-  <section class="container mb-4">
+  <section class="container mb-5">
     <form class="row g-3 d-flex align-items-center justify-content-center">
       <div class="col-auto">
         <p class="mb-0">Sign up to stay updated</p>
@@ -42,7 +34,7 @@
     </form>
   </section>
   <!-- useful links -->
-  <section class="container mb-4">
+  <section class="container mb-5">
     <div class="row g-4 text-center">
       <div
         class="col-xs col-sm-6 col-md-3 d-flex flex-column"

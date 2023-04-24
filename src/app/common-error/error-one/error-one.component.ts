@@ -9,23 +9,17 @@ import { LoggerService } from '../services/logger.service';
   styleUrls: ['./error-one.component.scss'],
 })
 export class ErrorOneComponent {
-  constructor(private logger: LoggerService) {}
-
-  public username: string = '';
   public usernameList: Array<string> = ['john', 'bruce', 'peter'];
 
-  public addUser(username: string): void {
-    if (username === '') {
-      alert('Username can not be empty.');
-    } else {
-      this.usernameList.push(username);
-      this.username = '';
-      this.logger.logInfo(username);
-    }
+  constructor(private logger: LoggerService) {}
+
+  public addUsername(username: string): void {
+    this.usernameList.push(username);
+    this.logger.logInfo(username);
   }
 
-  public deleteUser(id: number): void {
-    const item = this.usernameList.splice(id, 1)[0];
-    this.logger.logInfo(item);
+  public deleteUsername(id: number): void {
+    const username = this.usernameList.splice(id, 1)[0];
+    this.logger.logInfo(username);
   }
 }

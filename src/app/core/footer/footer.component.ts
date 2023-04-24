@@ -11,6 +11,29 @@ export class FooterComponent {
 
   public currentYear: string = new Date().getFullYear().toString();
 
+  public socialNetworkLinkList = [
+    {
+      iconClass: 'fa-brands fa-facebook-f',
+      href: 'https://www.facebook.com/',
+    },
+    {
+      iconClass: 'fa-brands fa-twitter',
+      href: 'https://twitter.com/',
+    },
+    {
+      iconClass: 'fa-brands fa-instagram',
+      href: 'https://www.instagram.com/',
+    },
+    {
+      iconClass: 'fa-brands fa-linkedin-in',
+      href: 'https://in.linkedin.com/',
+    },
+    {
+      iconClass: 'fa-brands fa-github',
+      href: 'https://github.com/',
+    },
+  ];
+
   public hyperlinkSections = [
     {
       title: 'Title 1',

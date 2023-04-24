@@ -1,36 +1,23 @@
-<form class="m-4 p-3 card">
-  <div class="mb-3">
-    <label class="form-label" for="email">Username</label>
-    <input
-      class="form-control"
-      type="text"
-      id="username"
-      name="username"
-      [(ngModel)]="username"
-      [value]="username"
-      placeholder="Enter your username"
-    />
+<section class="wrapper container p-5">
+  <!-- Add Username -->
+  <app-error-two (addUsernameEvent)="addUsername($event)" />
+  <!-- Username List -->
+  <div class="card">
+    <div class="card-header">Users</div>
+    <ul class="list-group list-group-flush">
+      <ng-container [ngSwitch]="usernameList.length > 0">
+        <ng-container *ngSwitchCase="true">
+          <ng-container *ngFor="let username of usernameList; index as id">
+            <app-error-three
+              [user]="{ username, id }"
+              (deleteUsernameEvent)="deleteUsername($event)"
+            />
+          </ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="false">
+          <li class="list-group-item">No users</li>
+        </ng-container>
+      </ng-container>
+    </ul>
   </div>
-  <button class="btn btn-primary" (click)="addUser(username)">
-    Add to List
-  </button>
-</form>
-<div class="card m-4">
-  <div class="card-header">Users</div>
-  <ul class="list-group list-group-flush">
-    <ng-container [ngSwitch]="usernameList.length > 0">
-      <ng-container *ngSwitchCase="true">
-        <li
-          *ngFor="let username of usernameList; index as i"
-          class="list-group-item d-flex justify-content-between align-items-center"
-        >
-          {{ username }}
-          <button class="btn btn-danger" (click)="deleteUser(i)">Delete</button>
-        </li>
-      </ng-container>
-      <ng-container *ngSwitchCase="false">
-        <li class="list-group-item">No users</li>
-      </ng-container>
-    </ng-container>
-  </ul>
-</div>
+</section>

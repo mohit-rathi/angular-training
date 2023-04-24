@@ -1,1 +1,17 @@
-<div class="container-fluid p-4">error-two works!</div>
+<form class="mb-5 p-3 card">
+  <div class="mb-3">
+    <label class="form-label" for="email">Username</label>
+    <input
+      class="form-control"
+      type="text"
+      id="username"
+      name="username"
+      [(ngModel)]="username"
+      [value]="username"
+      placeholder="Enter your username"
+    />
+  </div>
+  <button class="btn btn-primary" (click)="addUser(username)">
+    Add Username
+  </button>
+</form>
