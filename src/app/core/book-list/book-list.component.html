@@ -1,5 +1,8 @@
-<ul class="cards-wrapper">
-  <li *ngFor="let book of books">
-    <app-book-card [book]="book"></app-book-card>
-  </li>
-</ul>
+<section class="p-4">
+  <h2 class="mb-4">Best Sellers</h2>
+  <ul class="mb-0 list-unstyled row g-4">
+    <li class="col-3" *ngFor="let book of bookList">
+      <app-book-card [book]="book" />
+    </li>
+  </ul>
+</section>

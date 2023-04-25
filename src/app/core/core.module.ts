@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookCardComponent } from './book-card/book-card.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,16 @@ import { BookCardComponent } from './book-card/book-card.component';
     SidebarComponent,
     BookListComponent,
     BookCardComponent,
+    MainComponent,
   ],
   imports: [CommonModule, FormsModule],
   exports: [
     HeaderComponent,
-    FooterComponent,
+    MainComponent,
     SidebarComponent,
     BookListComponent,
     BookCardComponent,
+    FooterComponent,
   ],
 })
 export class CoreModule {}
