@@ -1,0 +1,13 @@
+<section class="container-fluid p-4">
+  <h1 class="mb-3">Parent component works!</h1>
+  <p class="mb-5">{{ messageFromChild }}</p>
+  <app-child
+    [messageFromParent]="messageToChild"
+    (messageEvent)="showMessage($event)"
+  >
+    <p class="mb-3" #childContent>
+      This content is being passed from the Parent component and rendered using
+      <strong>ng-content</strong> in the Child component.
+    </p>
+  </app-child>
+</section>

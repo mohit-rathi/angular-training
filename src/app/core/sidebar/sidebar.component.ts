@@ -6,37 +6,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-  public sidebarTitle: string = 'Filters';
+  public sidebarTitle: string = 'Filter';
 
-  public priceRangeList = [
-    {
-      min: 0,
-      max: 99,
-    },
-    {
-      min: 100,
-      max: 199,
-    },
-    {
-      min: 200,
-      max: 299,
-    },
-    {
-      min: 300,
-      max: 399,
-    },
-    {
-      min: 400,
-      max: 499,
-    },
-  ];
+  // public priceRangeList = [
+  //   {
+  //     min: 1,
+  //     max: 100,
+  //   },
+  //   {
+  //     min: 101,
+  //     max: 200,
+  //   },
+  //   {
+  //     min: 201,
+  //     max: 300,
+  //   },
+  //   {
+  //     min: 301,
+  //     max: 400,
+  //   },
+  //   {
+  //     min: 401,
+  //     max: 500,
+  //   },
+  // ];
 
   public authorList: string[] = [
     'William Shakespeare',
     'Agatha Christie',
     'Barbara Cartland',
     'Danielle Steel',
-    'Harold Robbins',
     'J. K. Rowling',
     'Stephen King',
   ];

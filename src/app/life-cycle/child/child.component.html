@@ -1,0 +1,29 @@
+<section class="">
+  <h1 class="mb-3">Child component works!</h1>
+  <p class="mb-3">{{ messageFromParent }}</p>
+  <ng-content></ng-content>
+  <div class="form-check mb-3">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      id="cb"
+      name="cb"
+      value="cbvalue"
+      #checkBox
+    />
+    <label class="form-check-label" for="cb">Toggle me!</label>
+  </div>
+  <p class="mb-3" *ngIf="checkBox.checked; else notChecked">
+    The above checkbox is checked
+  </p>
+  <ng-template #notChecked>
+    <p class="mb-3">The above checkbox is NOT checked</p>
+  </ng-template>
+  <ng-container [ngSwitch]="isDisplay">
+    <p class="mb-3" *ngSwitchCase="true">TRUE</p>
+    <p class="mb-3" *ngSwitchCase="false">FALSE</p>
+  </ng-container>
+  <button class="btn btn-primary" (click)="sendMessageToParent()">
+    Send message to Parent
+  </button>
+</section>
