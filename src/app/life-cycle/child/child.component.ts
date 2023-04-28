@@ -45,8 +45,13 @@ export class ChildComponent
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.warn('Child onChanges');
-    console.warn(changes);
+    // console.warn('Child onChanges');
+    for (const key in changes) {
+      const change = changes[key];
+      const previous = change.previousValue;
+      const current = change.currentValue;
+      console.warn('Previous: ' + previous + '; Current: ' + current);
+    }
   }
 
   ngOnInit() {
