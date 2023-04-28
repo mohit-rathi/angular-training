@@ -7,32 +7,40 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./observable-one.component.scss'],
 })
 export class ObservableOneComponent implements OnInit, OnDestroy {
+  public obs!: Observable<number>;
   public sub!: Subscription;
   public observerError: string = '';
-  public numbers: Array<unknown> = [];
+  public observerComplete: string = '';
+  public numbers: Array<number> = [];
 
   ngOnInit(): void {
     // create a custom observable
-    const customObservable = new Observable((observer) => {
+    this.obs = new Observable((observer) => {
       let count = 1;
       setInterval(() => {
-        if (count > 3) {
-          observer.error(new Error('Count is greater than 3'));
-        }
         observer.next(count);
+        if (count === 5) {
+          observer.complete();
+        }
+        if (count > 5) {
+          observer.error(new Error('ERROR: Count is greater than 5!'));
+        }
         count++;
       }, 1000);
     });
 
     // subscribe to the observable
-    this.sub = customObservable.subscribe(
-      (data) => {
+    this.sub = this.obs.subscribe({
+      next: (data: number) => {
         this.numbers.push(data);
       },
-      (error) => {
+      error: (error) => {
         this.observerError = error.message;
-      }
-    );
+      },
+      complete: () => {
+        this.observerComplete = 'SUCCESS: Observer completed!';
+      },
+    });
   }
 
   ngOnDestroy(): void {
