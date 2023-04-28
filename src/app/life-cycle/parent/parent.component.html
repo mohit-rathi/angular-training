@@ -1,8 +1,12 @@
 <section class="container-fluid p-4">
   <h1 class="mb-3">Parent component works!</h1>
-  <input class="form-control" type="text" [(ngModel)]="messageToChild" />
-  <p class="mb-5">{{ messageFromChild }}</p>
+  <input class="form-control mb-3" type="text" [(ngModel)]="messageToChild" />
+  <p class="mb-3">{{ messageFromChild }}</p>
+  <button class="btn btn-primary mb-5" (click)="toggleChild()">
+    Toggle Child
+  </button>
   <app-child
+    *ngIf="isChildVisible"
     [messageFromParent]="messageToChild"
     (messageEvent)="showMessage($event)"
   >
