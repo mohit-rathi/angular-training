@@ -30,39 +30,39 @@ export class ParentComponent
   public messageFromChild!: string;
 
   constructor() {
-    console.warn('Parent constructor');
+    // console.warn('Parent constructor');
   }
 
   ngOnChanges() {
-    console.warn('Parent onChanges');
+    // console.warn('Parent onChanges');
   }
 
   ngOnInit() {
-    console.warn('Parent onInit');
+    // console.warn('Parent onInit');
   }
 
   ngDoCheck() {
-    console.warn('Parent doCheck');
+    // console.warn('Parent doCheck');
   }
 
   ngAfterContentInit() {
-    console.warn('Parent afterContentInit');
+    // console.warn('Parent afterContentInit');
   }
 
   ngAfterContentChecked() {
-    console.warn('Parent afterContentChecked');
+    // console.warn('Parent afterContentChecked');
   }
 
   ngAfterViewInit() {
-    console.warn('Parent afterViewInit');
+    // console.warn('Parent afterViewInit');
   }
 
   ngAfterViewChecked() {
-    console.warn('Parent afterViewChecked');
+    // console.warn('Parent afterViewChecked');
   }
 
   ngOnDestroy() {
-    console.warn('Parent onDestroy');
+    // console.warn('Parent onDestroy');
   }
 
   public showMessage(messageFromChild: string) {

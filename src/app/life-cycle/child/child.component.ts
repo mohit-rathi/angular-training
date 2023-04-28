@@ -5,6 +5,7 @@ import {
   EventEmitter,
   ViewChild,
   OnChanges,
+  SimpleChanges,
   OnInit,
   DoCheck,
   AfterContentInit,
@@ -40,40 +41,40 @@ export class ChildComponent
   public isDisplay: boolean = false;
 
   constructor() {
-    console.warn('Child constructor');
+    // console.warn('Child constructor');
   }
 
-  ngOnChanges() {
+  ngOnChanges(changes: SimpleChanges) {
     console.warn('Child onChanges');
+    console.warn(changes);
   }
 
   ngOnInit() {
-    console.warn('Child onInit');
+    // console.warn('Child onInit');
   }
 
   ngDoCheck() {
-    console.warn('Child doCheck');
+    // console.warn('Child doCheck');
   }
 
   ngAfterContentInit() {
-    console.warn('Child afterContentInit');
+    // console.warn('Child afterContentInit');
   }
 
   ngAfterContentChecked() {
-    console.warn('Child afterContentChecked');
+    // console.warn('Child afterContentChecked');
   }
 
   ngAfterViewInit() {
-    console.warn('Child afterViewInit');
+    // console.warn('Child afterViewInit');
   }
 
   ngAfterViewChecked() {
-    console.warn('Child afterViewChecked');
-    console.error(this.childContent.nativeElement);
+    // console.log('Child afterViewChecked');
   }
 
   ngOnDestroy() {
-    console.warn('Child onDestroy');
+    // console.warn('Child onDestroy');
   }
 
   public sendMessageToParent(): void {

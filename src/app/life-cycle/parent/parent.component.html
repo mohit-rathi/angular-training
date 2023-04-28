@@ -1,5 +1,6 @@
 <section class="container-fluid p-4">
   <h1 class="mb-3">Parent component works!</h1>
+  <input class="form-control" type="text" [(ngModel)]="messageToChild" />
   <p class="mb-5">{{ messageFromChild }}</p>
   <app-child
     [messageFromParent]="messageToChild"
