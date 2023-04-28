@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 import { CommonErrorModule } from './common-error/common-error.module';
 import { LifeCycleModule } from './life-cycle/life-cycle.module';
 import { ObservableModule } from './observable/observable.module';
+import { CustomDirectiveModule } from './custom-directive/custom-directive.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
     CommonErrorModule,
     LifeCycleModule,
     ObservableModule,
+    CustomDirectiveModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

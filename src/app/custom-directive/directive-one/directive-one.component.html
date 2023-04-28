@@ -1,0 +1,17 @@
+<p class="m-3 p-3 rounded" basicHighlight>
+  Set style using basicHighlight directive. Directly access the element and set
+  style on it.
+</p>
+<p class="m-3 p-3 rounded" advanceHighlight>
+  Set style using advanceHighlight directive. Use Renderer2 to set style on the
+  element.
+</p>
+<p class="m-3 p-3 rounded" hoverHighlight>
+  Set style using hoverHighlight directive. Use Renderer2 or @HostBinding with
+  @HostListener to set styles on the element on mouseenter event and mouseleave
+  events.
+</p>
+<p class="m-3 p-3 rounded" customHighlight [highlightColor]="'lightgreen'">
+  Set style using customHighlight directive. Pass the highlight color to set
+  styles on the element on mouseenter event and mouseleave events.
+</p>

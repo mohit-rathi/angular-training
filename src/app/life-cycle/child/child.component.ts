@@ -75,7 +75,7 @@ export class ChildComponent
   }
 
   ngAfterViewChecked() {
-    console.log('Child afterViewChecked');
+    console.warn('Child afterViewChecked');
   }
 
   ngOnDestroy() {
