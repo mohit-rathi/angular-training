@@ -15,3 +15,9 @@
   Set style using customHighlight directive. Pass the highlight color to set
   styles on the element on mouseenter event and mouseleave events.
 </p>
+<button class="btn btn-primary m-3" (click)="isVisible = !isVisible">
+  {{ isVisible ? "Hide" : "Show" }}
+</button>
+<p class="m-3 p-3 rounded" *appUnless="isVisible">
+  Hide or Show this paragraph using Custom Structural Directive appUnless.
+</p>
