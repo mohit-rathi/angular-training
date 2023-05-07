@@ -86,36 +86,22 @@
     <!-- Gender -->
     <div class="mb-3">
       <p class="mb-2">Gender</p>
-      <!-- Male -->
-      <div class="form-check">
+      <div class="form-check" *ngFor="let gender of genders">
         <input
           class="form-check-input"
           type="radio"
-          id="male"
+          [id]="gender"
           name="gender"
-          value="Male"
+          [value]="gender"
           ngModel
           required
         />
-        <label class="form-check-label" for="male">Male</label>
-      </div>
-      <!-- Female -->
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          id="female"
-          name="gender"
-          value="Female"
-          ngModel
-          required
-        />
-        <label class="form-check-label" for="female">Female</label>
+        <label [for]="gender">{{ gender }}</label>
       </div>
     </div>
     <!-- Location -->
     <div class="mb-3">
-      <p class="mb-2">Select Location</p>
+      <p class="mb-2">Location</p>
       <select
         class="form-select"
         id="location"

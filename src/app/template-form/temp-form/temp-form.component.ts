@@ -10,6 +10,7 @@ export class TempFormComponent {
   @ViewChild('tempForm') form!: NgForm;
 
   public city: string = 'AHM';
+  public genders: Array<string> = ['Male', 'Female'];
 
   public onSubmit(): void {
     console.log(this.form.value);
