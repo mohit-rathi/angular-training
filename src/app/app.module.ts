@@ -7,6 +7,7 @@ import { CommonErrorModule } from './common-error/common-error.module';
 import { LifeCycleModule } from './life-cycle/life-cycle.module';
 import { ObservableModule } from './observable/observable.module';
 import { CustomDirectiveModule } from './custom-directive/custom-directive.module';
+import { TemplateFormModule } from './template-form/template-form.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { AppComponent } from './app.component';
     LifeCycleModule,
     ObservableModule,
     CustomDirectiveModule,
+    TemplateFormModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

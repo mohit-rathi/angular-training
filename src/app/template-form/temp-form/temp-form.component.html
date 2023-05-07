@@ -1,0 +1,86 @@
+<div class="mx-auto p-4 wrapper">
+  <h1 class="mb-3 text-center">Template Driven Form</h1>
+  <form>
+    <!-- First Name -->
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        placeholder="Enter your first name"
+      />
+    </div>
+    <!-- Last Name -->
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        placeholder="Enter your last name"
+      />
+    </div>
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter your email"
+      />
+    </div>
+    <!-- Password -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Enter your password"
+      />
+    </div>
+    <!-- Gender -->
+    <div class="mb-3">
+      <p class="mb-2">Gender</p>
+      <!-- Male -->
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="male" />
+        <label class="form-check-label" for="male">Male</label>
+      </div>
+      <!-- Female -->
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          id="female"
+        />
+        <label class="form-check-label" for="female">Female</label>
+      </div>
+    </div>
+    <!-- Location -->
+    <select class="form-select mb-3" id="location" name="location">
+      <option value="AHM">Ahmedabad</option>
+      <option value="RKT">Rajkot</option>
+      <option value="GNR">Gandhinagar</option>
+      <option value="BRD">Baroda</option>
+    </select>
+    <!-- Remember Me -->
+    <div class="form-check mb-3">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value="remember"
+        id="remember"
+      />
+      <label class="form-check-label" for="remember">Remember Me</label>
+    </div>
+    <!-- Actions -->
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-danger">Reset</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+.wrapper {
+	max-width: 500px;
+}
+
+.form-actions {
+	display: flex;
+	gap: 1rem;
+
+	button {
+		width: 100%;
+	}
+}
