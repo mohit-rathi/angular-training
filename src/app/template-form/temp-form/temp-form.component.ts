@@ -9,6 +9,8 @@ import { NgForm } from '@angular/forms';
 export class TempFormComponent {
   @ViewChild('tempForm') form!: NgForm;
 
+  public city: string = 'AHM';
+
   public onSubmit(): void {
     console.log(this.form.value);
   }
