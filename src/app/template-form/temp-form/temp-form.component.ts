@@ -33,6 +33,7 @@ export class TempFormComponent {
     this.user.location = this.tempForm.value.location;
     this.user.remember = this.tempForm.value.remember;
     this.isSubmitted = true;
+    this.tempForm.reset();
   }
 
   public onSetValue(): void {
