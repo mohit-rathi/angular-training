@@ -135,7 +135,16 @@
         <label class="form-check-label" for="remember">Remember me</label>
       </div>
     </div>
-    <!-- Actions -->
+    <!-- Secondary Actions -->
+    <div class="form-actions mb-3">
+      <button type="button" class="btn btn-secondary" (click)="onSetValue()">
+        Set Value
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="onPatchValue()">
+        Patch Value
+      </button>
+    </div>
+    <!-- Primary Actions -->
     <div class="form-actions">
       <button
         type="submit"
