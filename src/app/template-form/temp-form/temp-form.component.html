@@ -1,6 +1,6 @@
 <div class="mx-auto p-4 wrapper">
   <h1 class="mb-3 text-center">Template Driven Form</h1>
-  <form #tempForm="ngForm" (ngSubmit)="onSubmit(tempForm)">
+  <form #tempForm="ngForm" (ngSubmit)="onSubmit()">
     <!-- First Name -->
     <div class="mb-3">
       <label for="fname" class="form-label">First Name</label>
@@ -36,7 +36,7 @@
       />
       <span
         class="error"
-        *ngIf="lname.invalid && (lname.touched || fname.dirty)"
+        *ngIf="lname.invalid && (lname.touched || lname.dirty)"
       >
         Last name is required.
       </span>
