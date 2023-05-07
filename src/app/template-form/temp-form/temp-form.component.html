@@ -11,7 +11,15 @@
         placeholder="Enter your first name"
         name="fname"
         ngModel
+        required
+        #fname="ngModel"
       />
+      <span
+        class="error"
+        *ngIf="fname.invalid && (fname.touched || fname.dirty)"
+      >
+        First name is required.
+      </span>
     </div>
     <!-- Last Name -->
     <div class="mb-3">
@@ -23,7 +31,15 @@
         placeholder="Enter your last name"
         name="lname"
         ngModel
+        required
+        #lname="ngModel"
       />
+      <span
+        class="error"
+        *ngIf="lname.invalid && (lname.touched || fname.dirty)"
+      >
+        Last name is required.
+      </span>
     </div>
     <!-- Email -->
     <div class="mb-3">
@@ -35,7 +51,17 @@
         placeholder="Enter your email"
         name="email"
         ngModel
+        required
+        email
+        #email="ngModel"
       />
+      <div
+        class="error"
+        *ngIf="email.invalid && (email.touched || email.dirty)"
+      >
+        <span *ngIf="email.errors?.['required']">Email is required.</span>
+        <span *ngIf="email.errors?.['email']">Email address is invalid.</span>
+      </div>
     </div>
     <!-- Password -->
     <div class="mb-3">
@@ -47,7 +73,15 @@
         placeholder="Enter your password"
         name="password"
         ngModel
+        required
+        #password="ngModel"
       />
+      <span
+        class="error"
+        *ngIf="password.invalid && (password.touched || password.dirty)"
+      >
+        Password is required.
+      </span>
     </div>
     <!-- Gender -->
     <div class="mb-3">
@@ -61,6 +95,7 @@
           name="gender"
           value="Male"
           ngModel
+          required
         />
         <label class="form-check-label" for="male">Male</label>
       </div>
@@ -73,32 +108,56 @@
           name="gender"
           value="Female"
           ngModel
+          required
         />
         <label class="form-check-label" for="female">Female</label>
       </div>
     </div>
     <!-- Location -->
-    <p class="mb-2">Select Location</p>
-    <select class="form-select mb-3" id="location" name="location" ngModel>
-      <option value="AHM">Ahmedabad</option>
-      <option value="RKT">Rajkot</option>
-      <option value="GNR">Gandhinagar</option>
-      <option value="BRD">Baroda</option>
-    </select>
-    <!-- Remember Me -->
-    <div class="form-check mb-3">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        id="remember"
-        name="remember"
+    <div class="mb-3">
+      <p class="mb-2">Select Location</p>
+      <select
+        class="form-select"
+        id="location"
+        name="location"
         ngModel
-      />
-      <label class="form-check-label" for="remember">Remember me</label>
+        required
+        #location="ngModel"
+      >
+        <option value="AHM">Ahmedabad</option>
+        <option value="RKT">Rajkot</option>
+        <option value="GNR">Gandhinagar</option>
+        <option value="BRD">Baroda</option>
+      </select>
+      <span
+        class="error"
+        *ngIf="location.invalid && (location.touched || location.dirty)"
+      >
+        Location is required.
+      </span>
+    </div>
+    <!-- Remember Me -->
+    <div class="mb-3">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="remember"
+          name="remember"
+          ngModel
+        />
+        <label class="form-check-label" for="remember">Remember me</label>
+      </div>
     </div>
     <!-- Actions -->
     <div class="form-actions">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="tempForm.invalid"
+      >
+        Submit
+      </button>
       <button type="button" class="btn btn-danger">Reset</button>
     </div>
   </form>

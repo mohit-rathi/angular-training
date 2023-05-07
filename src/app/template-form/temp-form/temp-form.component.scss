@@ -1,12 +1,27 @@
 .wrapper {
 	max-width: 500px;
-}
 
-.form-actions {
-	display: flex;
-	gap: 1rem;
+	input.ng-invalid.ng-touched {
+		border: 1px solid #dc3545;
+	}
 
-	button {
-		width: 100%;
+	select.ng-invalid.ng-touched {
+		border: 1px solid #dc3545;
+	}
+
+	.error {
+		display: block;
+		margin-top: 4px;
+		color: #dc3545;
+		font-size: 14px;
+	}
+
+	.form-actions {
+		display: flex;
+		gap: 1rem;
+
+		button {
+			width: 100%;
+		}
 	}
 }
