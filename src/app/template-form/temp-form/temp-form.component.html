@@ -1,24 +1,28 @@
 <div class="mx-auto p-4 wrapper">
   <h1 class="mb-3 text-center">Template Driven Form</h1>
-  <form>
+  <form #tempForm="ngForm" (ngSubmit)="onSubmit(tempForm)">
     <!-- First Name -->
     <div class="mb-3">
-      <label for="firstName" class="form-label">First Name</label>
+      <label for="fname" class="form-label">First Name</label>
       <input
         type="text"
         class="form-control"
-        id="firstName"
+        id="fname"
         placeholder="Enter your first name"
+        name="fname"
+        ngModel
       />
     </div>
     <!-- Last Name -->
     <div class="mb-3">
-      <label for="lastName" class="form-label">Last Name</label>
+      <label for="lname" class="form-label">Last Name</label>
       <input
         type="text"
         class="form-control"
-        id="lastName"
+        id="lname"
         placeholder="Enter your last name"
+        name="lname"
+        ngModel
       />
     </div>
     <!-- Email -->
@@ -29,6 +33,8 @@
         class="form-control"
         id="email"
         placeholder="Enter your email"
+        name="email"
+        ngModel
       />
     </div>
     <!-- Password -->
@@ -39,6 +45,8 @@
         class="form-control"
         id="password"
         placeholder="Enter your password"
+        name="password"
+        ngModel
       />
     </div>
     <!-- Gender -->
@@ -46,7 +54,14 @@
       <p class="mb-2">Gender</p>
       <!-- Male -->
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="gender" id="male" />
+        <input
+          class="form-check-input"
+          type="radio"
+          id="male"
+          name="gender"
+          value="Male"
+          ngModel
+        />
         <label class="form-check-label" for="male">Male</label>
       </div>
       <!-- Female -->
@@ -54,14 +69,17 @@
         <input
           class="form-check-input"
           type="radio"
-          name="gender"
           id="female"
+          name="gender"
+          value="Female"
+          ngModel
         />
         <label class="form-check-label" for="female">Female</label>
       </div>
     </div>
     <!-- Location -->
-    <select class="form-select mb-3" id="location" name="location">
+    <p class="mb-2">Select Location</p>
+    <select class="form-select mb-3" id="location" name="location" ngModel>
       <option value="AHM">Ahmedabad</option>
       <option value="RKT">Rajkot</option>
       <option value="GNR">Gandhinagar</option>
@@ -72,10 +90,11 @@
       <input
         class="form-check-input"
         type="checkbox"
-        value="remember"
         id="remember"
+        name="remember"
+        ngModel
       />
-      <label class="form-check-label" for="remember">Remember Me</label>
+      <label class="form-check-label" for="remember">Remember me</label>
     </div>
     <!-- Actions -->
     <div class="form-actions">
