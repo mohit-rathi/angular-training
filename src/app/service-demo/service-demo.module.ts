@@ -10,6 +10,7 @@ import { ServiceListComponent } from './service-list/service-list.component';
 
 // services
 import { UserListService } from './services/user-list.service';
+import { UserLoggerService } from './services/user-logger.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { UserListService } from './services/user-list.service';
     ServiceListComponent,
   ],
   imports: [CommonModule, FormsModule],
-  providers: [UserListService],
+  providers: [UserListService, UserLoggerService],
   exports: [
     ServiceWrapperComponent,
     ServiceFormComponent,
