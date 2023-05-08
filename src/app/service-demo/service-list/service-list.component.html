@@ -1,6 +1,7 @@
 <div class="">
   <ul class="list-group">
-    <li class="list-group-item">John Doe</li>
-    <li class="list-group-item">Peter Parker</li>
+    <li class="list-group-item" *ngFor="let user of userList">
+      {{ user }}
+    </li>
   </ul>
 </div>

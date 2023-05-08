@@ -6,9 +6,12 @@
       class="form-control"
       id="username"
       placeholder="Enter your name"
+      [(ngModel)]="username"
     />
   </div>
   <div>
-    <button class="btn btn-primary w-100">Add To List</button>
+    <button class="btn btn-primary w-100" (click)="onUserCreate()">
+      Add To List
+    </button>
   </div>
 </div>
