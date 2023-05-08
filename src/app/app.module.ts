@@ -8,6 +8,7 @@ import { LifeCycleModule } from './life-cycle/life-cycle.module';
 import { ObservableModule } from './observable/observable.module';
 import { CustomDirectiveModule } from './custom-directive/custom-directive.module';
 import { TemplateFormModule } from './template-form/template-form.module';
+import { ServiceDemoModule } from './service-demo/service-demo.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { AppComponent } from './app.component';
     ObservableModule,
     CustomDirectiveModule,
     TemplateFormModule,
+    ServiceDemoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
