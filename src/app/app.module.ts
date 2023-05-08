@@ -9,6 +9,7 @@ import { ObservableModule } from './observable/observable.module';
 import { CustomDirectiveModule } from './custom-directive/custom-directive.module';
 import { TemplateFormModule } from './template-form/template-form.module';
 import { ServiceDemoModule } from './service-demo/service-demo.module';
+import { RoutingDemoModule } from './routing-demo/routing-demo.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { AppComponent } from './app.component';
     CustomDirectiveModule,
     TemplateFormModule,
     ServiceDemoModule,
+    RoutingDemoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
