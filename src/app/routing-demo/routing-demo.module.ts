@@ -3,10 +3,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // components
+import { RouteHomeComponent } from './route-home/route-home.component';
+import { RouteAccountComponent } from './route-account/route-account.component';
+import { RouteProductComponent } from './route-product/route-product.component';
+import { RouteDashboardComponent } from './route-dashboard/route-dashboard.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    RouteHomeComponent,
+    RouteAccountComponent,
+    RouteProductComponent,
+    RouteDashboardComponent,
+  ],
   imports: [CommonModule],
-  exports: [],
+  exports: [
+    RouteHomeComponent,
+    RouteAccountComponent,
+    RouteProductComponent,
+    RouteDashboardComponent,
+  ],
 })
 export class RoutingDemoModule {}
