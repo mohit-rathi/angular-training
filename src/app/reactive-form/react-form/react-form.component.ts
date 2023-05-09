@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  AsyncValidatorFn,
+  FormArray,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-react-form',
@@ -17,7 +24,11 @@ export class ReactFormComponent implements OnInit {
   public initializeForm(): void {
     this.userForm = new FormGroup({
       login: new FormGroup({
-        email: new FormControl(null, [Validators.required, Validators.email]),
+        email: new FormControl(
+          null,
+          [Validators.required, Validators.email],
+          this.checkForbiddenEmail as AsyncValidatorFn
+        ),
         password: new FormControl(null, [
           Validators.required,
           Validators.minLength(4),
@@ -52,5 +63,20 @@ export class ReactFormComponent implements OnInit {
     } else {
       return null;
     }
+  }
+
+  public checkForbiddenEmail(
+    control: FormControl
+  ): Promise<any> | Observable<any> {
+    const promise = new Promise<any>((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'admin@admin.com') {
+          resolve({ emailForbidden: true });
+        } else {
+          resolve(null);
+        }
+      }, 3000);
+    });
+    return promise;
   }
 }
