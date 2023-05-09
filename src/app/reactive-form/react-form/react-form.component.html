@@ -1,52 +1,58 @@
 <div class="mx-auto p-4 wrapper">
   <h1 class="mb-3 text-center">Reactive Form</h1>
   <form class="mb-4" [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <!-- Email -->
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        placeholder="Enter your email"
-        name="email"
-        formControlName="email"
-      />
-      <div
-        class="error"
-        *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched"
-      >
-        <span *ngIf="(userForm.get('email')?.errors)!['required']">
-          Email is required.
-        </span>
-        <span *ngIf="(userForm.get('email')?.errors)!['email']">
-          Invalid email address.
-        </span>
+    <div formGroupName="login">
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter your email"
+          name="email"
+          formControlName="email"
+        />
+        <div
+          class="error"
+          *ngIf="
+            userForm.get('login.email')?.invalid &&
+            userForm.get('login.email')?.touched
+          "
+        >
+          <span *ngIf="(userForm.get('login.email')?.errors)!['required']">
+            Email is required.
+          </span>
+          <span *ngIf="(userForm.get('login.email')?.errors)!['email']">
+            Invalid email address.
+          </span>
+        </div>
       </div>
-    </div>
-    <!-- Password -->
-    <div class="mb-3">
-      <label for="password" class="form-label">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        placeholder="Enter your password"
-        name="password"
-        formControlName="password"
-      />
-      <div
-        class="error"
-        *ngIf="
-          userForm.get('password')?.invalid && userForm.get('password')?.touched
-        "
-      >
-        <span *ngIf="(userForm.get('password')?.errors)!['required']">
-          Password is required.
-        </span>
-        <span *ngIf="(userForm.get('password')?.errors)!['minlength']">
-          Password must be atleast 4 characters long.
-        </span>
+      <!-- Password -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Enter your password"
+          name="password"
+          formControlName="password"
+        />
+        <div
+          class="error"
+          *ngIf="
+            userForm.get('login.password')?.invalid &&
+            userForm.get('login.password')?.touched
+          "
+        >
+          <span *ngIf="(userForm.get('login.password')?.errors)!['required']">
+            Password is required.
+          </span>
+          <span *ngIf="(userForm.get('login.password')?.errors)!['minlength']">
+            Password must be atleast 4 characters long.
+          </span>
+        </div>
       </div>
     </div>
     <!-- Gender -->

@@ -15,11 +15,13 @@ export class ReactFormComponent implements OnInit {
 
   public initializeForm(): void {
     this.userForm = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(4),
-      ]),
+      login: new FormGroup({
+        email: new FormControl(null, [Validators.required, Validators.email]),
+        password: new FormControl(null, [
+          Validators.required,
+          Validators.minLength(4),
+        ]),
+      }),
       gender: new FormControl('Male'),
       location: new FormControl('AHM'),
       remember: new FormControl(null),
