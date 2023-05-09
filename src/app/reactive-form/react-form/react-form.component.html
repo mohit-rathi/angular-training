@@ -12,6 +12,17 @@
         name="email"
         formControlName="email"
       />
+      <div
+        class="error"
+        *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched"
+      >
+        <span *ngIf="(userForm.get('email')?.errors)!['required']">
+          Email is required.
+        </span>
+        <span *ngIf="(userForm.get('email')?.errors)!['email']">
+          Invalid email address.
+        </span>
+      </div>
     </div>
     <!-- Password -->
     <div class="mb-3">
@@ -24,6 +35,19 @@
         name="password"
         formControlName="password"
       />
+      <div
+        class="error"
+        *ngIf="
+          userForm.get('password')?.invalid && userForm.get('password')?.touched
+        "
+      >
+        <span *ngIf="(userForm.get('password')?.errors)!['required']">
+          Password is required.
+        </span>
+        <span *ngIf="(userForm.get('password')?.errors)!['minlength']">
+          Password must be atleast 4 characters long.
+        </span>
+      </div>
     </div>
     <!-- Gender -->
     <div class="mb-3">
