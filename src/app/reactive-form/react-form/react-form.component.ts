@@ -8,6 +8,7 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ReactFormComponent implements OnInit {
   public userForm!: FormGroup;
+  public forbiddenPasswords: Array<string> = ['abcd', '1234'];
 
   ngOnInit(): void {
     this.initializeForm();
@@ -20,6 +21,7 @@ export class ReactFormComponent implements OnInit {
         password: new FormControl(null, [
           Validators.required,
           Validators.minLength(4),
+          this.checkForbiddenPasswords.bind(this),
         ]),
       }),
       gender: new FormControl('Male'),
@@ -40,5 +42,15 @@ export class ReactFormComponent implements OnInit {
 
   public getHobbyControls() {
     return (<FormArray>this.userForm.get('hobbies')).controls;
+  }
+
+  public checkForbiddenPasswords(
+    control: FormControl
+  ): { [k: string]: boolean } | null {
+    if (this.forbiddenPasswords.indexOf(control.value) !== -1) {
+      return { passwordForbidden: true };
+    } else {
+      return null;
+    }
   }
 }

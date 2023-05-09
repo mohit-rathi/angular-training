@@ -52,6 +52,13 @@
           <span *ngIf="(userForm.get('login.password')?.errors)!['minlength']">
             Password must be atleast 4 characters long.
           </span>
+          <span
+            *ngIf="
+              (userForm.get('login.password')?.errors)!['passwordForbidden']
+            "
+          >
+            This password is forbidden.
+          </span>
         </div>
       </div>
     </div>
