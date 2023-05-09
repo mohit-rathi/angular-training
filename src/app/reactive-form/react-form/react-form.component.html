@@ -26,6 +26,11 @@
           <span *ngIf="(userForm.get('login.email')?.errors)!['email']">
             Invalid email address.
           </span>
+          <span
+            *ngIf="(userForm.get('login.email')?.errors)!['emailForbidden']"
+          >
+            This email is forbidden.
+          </span>
         </div>
       </div>
       <!-- Password -->

@@ -5,6 +5,10 @@
 		border: 1px solid #dc3545;
 	}
 
+	input.ng-pending {
+		border: 1px solid #ffc107;
+	}
+
 	.error {
 		display: block;
 		margin-top: 4px;
