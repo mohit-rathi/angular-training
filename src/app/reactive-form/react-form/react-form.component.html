@@ -96,6 +96,29 @@
         <option value="BRD">Baroda</option>
       </select>
     </div>
+    <!-- Hobbies -->
+    <div class="mb-3" formArrayName="hobbies">
+      <h4 class="mb-3">Hobbies</h4>
+      <button
+        class="btn btn-success mb-3"
+        type="button"
+        (click)="addHobbyControl()"
+      >
+        Add Hobby
+      </button>
+      <div
+        class="mb-3"
+        *ngFor="let hobbyControl of getHobbyControls(); index as i"
+      >
+        <label [for]="'hobby' + i" class="form-label">Hobby {{ i + 1 }}</label>
+        <input
+          type="text"
+          class="form-control"
+          [id]="'hobby' + i"
+          [formControlName]="i"
+        />
+      </div>
+    </div>
     <!-- Remember Me -->
     <div class="mb-3">
       <div class="form-check">

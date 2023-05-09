@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-react-form',
@@ -24,11 +24,21 @@ export class ReactFormComponent implements OnInit {
       }),
       gender: new FormControl('Male'),
       location: new FormControl('AHM'),
+      hobbies: new FormArray([]),
       remember: new FormControl(null),
     });
   }
 
   public onSubmit(): void {
     console.log(this.userForm);
+  }
+
+  public addHobbyControl(): void {
+    const formControl = new FormControl(null, Validators.required);
+    (<FormArray>this.userForm.get('hobbies')).push(formControl);
+  }
+
+  public getHobbyControls() {
+    return (<FormArray>this.userForm.get('hobbies')).controls;
   }
 }
