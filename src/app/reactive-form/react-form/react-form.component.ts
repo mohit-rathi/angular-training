@@ -79,4 +79,19 @@ export class ReactFormComponent implements OnInit {
     });
     return promise;
   }
+
+  public onSetValue(): void {
+    this.userForm.setValue({
+      login: {
+        email: 'john@gmail.com',
+        password: 'John@123',
+      },
+      gender: 'Male',
+      location: 'AHM',
+      hobbies: [],
+      remember: false,
+    });
+  }
+
+  public onPatchValue(): void {}
 }
