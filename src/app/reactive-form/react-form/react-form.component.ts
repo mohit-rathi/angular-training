@@ -43,17 +43,17 @@ export class ReactFormComponent implements OnInit, OnDestroy {
       remember: new FormControl(null),
     });
 
-    this.valueSubscription = this.userForm.valueChanges.subscribe({
-      next: (value) => {
-        console.log(value);
-      },
-    });
-
-    // this.statusSubscription = this.userForm.statusChanges.subscribe({
-    //   next: (status) => {
-    //     console.log(status);
+    // this.valueSubscription = this.userForm.valueChanges.subscribe({
+    //   next: (value) => {
+    //     console.log(value);
     //   },
     // });
+
+    this.statusSubscription = this.userForm.statusChanges.subscribe({
+      next: (status) => {
+        console.log(status);
+      },
+    });
   }
 
   public onSubmit(): void {
@@ -126,7 +126,7 @@ export class ReactFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.valueSubscription.unsubscribe();
-    // this.statusSubscription.unsubscribe();
+    // this.valueSubscription.unsubscribe();
+    this.statusSubscription.unsubscribe();
   }
 }
