@@ -55,4 +55,12 @@
       <button type="submit" class="btn btn-primary">Add Hero</button>
     </div>
   </form>
+  <div class="">
+    <div *ngFor="let hero of heroes">
+      <p>{{ hero.heroName }}</p>
+      <p>{{ hero.realName }}</p>
+      <p>{{ hero.power }}</p>
+      <p>{{ hero.isAvenger }}</p>
+    </div>
+  </div>
 </div>
