@@ -1,4 +1,58 @@
 <div class="p-4">
-  <h1 class="mb-3">Heroes</h1>
-  <form></form>
+  <h1 class="mb-3">Create Hero</h1>
+  <form class="card p-3" #heroForm="ngForm" (submit)="addHero(heroForm)">
+    <!-- Hero Name -->
+    <div class="mb-3">
+      <label for="heroName" class="form-label">Hero Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="heroName"
+        name="heroName"
+        ngModel
+        required
+      />
+    </div>
+    <!-- Real Name -->
+    <div class="mb-3">
+      <label for="realName" class="form-label">Real Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="realName"
+        name="realName"
+        ngModel
+      />
+    </div>
+    <!-- Power -->
+    <div class="mb-3">
+      <label for="power" class="form-label">Power</label>
+      <input
+        type="number"
+        class="form-control"
+        id="power"
+        name="power"
+        ngModel
+        required
+      />
+    </div>
+    <!-- Is Avenger -->
+    <div class="form-check mb-3">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value="avenger"
+        id="isAvenger"
+        name="isAvenger"
+        ngModel
+      />
+      <label class="form-check-label" for="isAvenger">
+        Hero is an Avenger
+      </label>
+    </div>
+    <!-- Form Actions -->
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Add Hero</button>
+    </div>
+  </form>
 </div>
