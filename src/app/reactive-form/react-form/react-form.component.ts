@@ -93,5 +93,10 @@ export class ReactFormComponent implements OnInit {
     });
   }
 
-  public onPatchValue(): void {}
+  public onPatchValue(): void {
+    this.userForm.patchValue({
+      gender: 'Female',
+      location: 'RKT',
+    });
+  }
 }
