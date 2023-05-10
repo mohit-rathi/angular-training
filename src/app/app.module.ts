@@ -11,6 +11,7 @@ import { ServiceDemoModule } from './service-demo/service-demo.module';
 import { RoutingDemoModule } from './routing-demo/routing-demo.module';
 import { TemplateFormModule } from './template-form/template-form.module';
 import { ReactiveFormModule } from './reactive-form/reactive-form.module';
+import { HttpDemoModule } from './http-demo/http-demo.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { AppComponent } from './app.component';
     RoutingDemoModule,
     TemplateFormModule,
     ReactiveFormModule,
+    HttpDemoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
