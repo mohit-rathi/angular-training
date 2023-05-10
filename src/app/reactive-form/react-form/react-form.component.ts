@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
-  AsyncValidatorFn,
-  FormArray,
-  FormControl,
   FormGroup,
+  FormControl,
+  FormArray,
   Validators,
+  AsyncValidatorFn,
 } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-react-form',
   templateUrl: './react-form.component.html',
   styleUrls: ['./react-form.component.scss'],
 })
-export class ReactFormComponent implements OnInit {
+export class ReactFormComponent implements OnInit, OnDestroy {
   public userForm!: FormGroup;
   public forbiddenPasswords: Array<string> = ['abcd', '1234'];
+  public valueSubscription!: Subscription;
+  public statusSubscription!: Subscription;
 
   ngOnInit(): void {
     this.initializeForm();
@@ -40,10 +42,26 @@ export class ReactFormComponent implements OnInit {
       hobbies: new FormArray([]),
       remember: new FormControl(null),
     });
+
+    this.valueSubscription = this.userForm.valueChanges.subscribe({
+      next: (value) => {
+        console.log(value);
+      },
+    });
+
+    // this.statusSubscription = this.userForm.statusChanges.subscribe({
+    //   next: (status) => {
+    //     console.log(status);
+    //   },
+    // });
   }
 
   public onSubmit(): void {
     console.log(this.userForm);
+    this.userForm.reset({
+      gender: this.userForm.get('gender')?.value,
+      location: this.userForm.get('location')?.value,
+    });
   }
 
   public addHobbyControl(): void {
@@ -98,5 +116,17 @@ export class ReactFormComponent implements OnInit {
       gender: 'Female',
       location: 'RKT',
     });
+  }
+
+  public onReset(): void {
+    this.userForm.reset({
+      gender: this.userForm.get('gender')?.value,
+      location: this.userForm.get('location')?.value,
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.valueSubscription.unsubscribe();
+    // this.statusSubscription.unsubscribe();
   }
 }

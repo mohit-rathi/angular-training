@@ -139,6 +139,7 @@
           type="checkbox"
           id="remember"
           name="remember"
+          value="rememberMe"
           formControlName="remember"
         />
         <label class="form-check-label" for="remember">Remember me</label>
@@ -156,7 +157,9 @@
     <!-- Primary Actions -->
     <div class="form-actions">
       <button type="submit" class="btn btn-primary">Submit</button>
-      <button type="reset" class="btn btn-danger">Reset</button>
+      <button type="button" class="btn btn-danger" (click)="onReset()">
+        Reset
+      </button>
     </div>
   </form>
 </div>
