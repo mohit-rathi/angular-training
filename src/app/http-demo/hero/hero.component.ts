@@ -97,4 +97,16 @@ export class HeroComponent implements OnInit {
     this.updateId = null;
     this.heroForm.reset();
   }
+
+  public deleteHero(id: string | undefined): void {
+    this.http.delete(env.baseUrl + `heroes/${id}.json`).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.getHeroes();
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
 }
