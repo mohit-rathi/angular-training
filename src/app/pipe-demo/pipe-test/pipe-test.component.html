@@ -1,35 +1,46 @@
 <div class="p-4">
   <h2 class="mb-3">Pipe Demo</h2>
   <div class="mb-3">
-    <h6>Lowercase</h6>
+    <h6 class="mb-3">Lowercase</h6>
     <p>{{ "Hello world!" }}</p>
     <p>{{ "Hello world!" | lowercase }}</p>
   </div>
   <div class="mb-3">
-    <h6>Titlecase</h6>
+    <h6 class="mb-3">Titlecase</h6>
     <p>{{ "Hello world!" }}</p>
     <p>{{ "Hello world!" | titlecase }}</p>
   </div>
   <div class="mb-3">
-    <h6>Uppercase</h6>
+    <h6 class="mb-3">Uppercase</h6>
     <p>{{ "Hello world!" }}</p>
     <p>{{ "Hello world!" | uppercase }}</p>
   </div>
   <div class="mb-3">
-    <h6>Currency</h6>
+    <h6 class="mb-3">Currency</h6>
     <p>{{ 1024 }}</p>
     <p>{{ 1024 | currency }}</p>
     <p>{{ 1024 | currency : "INR" }}</p>
   </div>
   <div class="mb-3">
-    <h6>Date</h6>
+    <h6 class="mb-3">Date</h6>
     <p>{{ currentDate }}</p>
     <p>{{ currentDate | date }}</p>
     <p>{{ currentDate | date : "shortDate" }}</p>
   </div>
   <div class="mb-3">
-    <h6>Percent</h6>
+    <h6 class="mb-3">Percent</h6>
     <p>{{ 0.5 }}</p>
     <p>{{ 0.5 | percent }}</p>
+  </div>
+  <div class="mb-3">
+    <h6 class="mb-3">Custom Pipe Multiplier</h6>
+    <p>{{ 10 }}</p>
+    <p>{{ 10 | multiplier }}</p>
+    <p>{{ 10 | multiplier : 3 }}</p>
+  </div>
+  <div class="mb-3">
+    <h6 class="mb-3">Custom Pipe Snakecase</h6>
+    <p>{{ "This is a String" }}</p>
+    <p>{{ "This is a String" | snakecase }}</p>
   </div>
 </div>
