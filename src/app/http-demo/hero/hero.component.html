@@ -1,6 +1,6 @@
 <div class="p-4">
-  <h1 class="mb-3">Create Hero</h1>
-  <form class="card p-3" #heroForm="ngForm" (submit)="addHero(heroForm)">
+  <h1 class="mb-3">Heroes</h1>
+  <form class="card mb-4 p-3" #heroForm="ngForm">
     <!-- Hero Name -->
     <div class="mb-3">
       <label for="heroName" class="form-label">Hero Name</label>
@@ -52,15 +52,52 @@
     </div>
     <!-- Form Actions -->
     <div class="form-actions">
-      <button type="submit" class="btn btn-primary">Add Hero</button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="addHero(heroForm)"
+        *ngIf="!updateId"
+      >
+        Add Hero
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary me-3"
+        (click)="updateHero(heroForm)"
+        *ngIf="updateId"
+      >
+        Update Hero
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="onCancelUpdate()"
+        *ngIf="updateId"
+      >
+        Cancel
+      </button>
     </div>
   </form>
-  <div class="">
-    <div *ngFor="let hero of heroes">
-      <p>{{ hero.heroName }}</p>
-      <p>{{ hero.realName }}</p>
-      <p>{{ hero.power }}</p>
-      <p>{{ hero.isAvenger }}</p>
-    </div>
-  </div>
+  <!-- Hero Cards -->
+  <section>
+    <ul class="mb-0 list-unstyled row g-4">
+      <li class="col-3" *ngFor="let hero of heroes">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="mb-3">{{ hero.heroName }}</h5>
+            <p>{{ hero.realName }}</p>
+            <p>{{ hero.power }}</p>
+            <p>{{ hero.isAvenger ? "Avenger" : "" }}</p>
+            <button
+              class="btn btn-primary me-3"
+              (click)="onUpdateHero(hero.id, hero)"
+            >
+              Update
+            </button>
+            <button class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
 </div>
