@@ -11,6 +11,9 @@ import { RouteAccountComponent } from './route-account/route-account.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 
+// services
+import { AuthService } from './services/auth.service';
+
 @NgModule({
   declarations: [
     RouteDashboardComponent,
@@ -21,6 +24,7 @@ import { RouteNotFoundComponent } from './route-not-found/route-not-found.compon
     RouteNotFoundComponent,
   ],
   imports: [CommonModule, RoutingDemoRoutingModule],
+  providers: [AuthService],
   exports: [
     RouteDashboardComponent,
     RouteHomeComponent,
