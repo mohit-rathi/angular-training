@@ -14,11 +14,13 @@ export class HeroService {
     return this._http.get(this._baseUrl + 'heroes.json').pipe(
       map((res: { [k: string]: any }) => {
         const heroList: any = [];
-        Object.keys(res).forEach((id) => {
-          let val: any = res[id];
-          let obj = { id, ...val };
-          heroList.push(obj);
-        });
+        if (res) {
+          Object.keys(res).forEach((id) => {
+            let val: any = res[id];
+            let obj = { id, ...val };
+            heroList.push(obj);
+          });
+        }
         return heroList;
       })
     );
