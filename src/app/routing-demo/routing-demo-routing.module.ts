@@ -7,12 +7,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { RouteHomeComponent } from './route-home/route-home.component';
 import { RouteProductComponent } from './route-product/route-product.component';
 import { RouteAccountComponent } from './route-account/route-account.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: RouteHomeComponent },
   { path: 'products', component: RouteProductComponent },
+  { path: 'products/:id/:productName', component: ProductDetailsComponent },
   { path: 'account', component: RouteAccountComponent },
   { path: '**', component: RouteNotFoundComponent },
 ];
