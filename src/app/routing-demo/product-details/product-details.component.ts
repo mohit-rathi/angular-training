@@ -11,6 +11,8 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   public productId!: number;
   public productName!: string;
   public paramsSubscription!: Subscription;
+  public queryParamsSubscription!: Subscription;
+  public fragmentSubscription!: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute) {}
 
@@ -26,11 +28,25 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
       },
     });
 
-    console.log('Query Params: ', this.activatedRoute.snapshot.queryParams);
-    console.log('Fragment: ', this.activatedRoute.snapshot.fragment);
+    // console.log('Query Params: ', this.activatedRoute.snapshot.queryParams);
+    // console.log('Fragment: ', this.activatedRoute.snapshot.fragment);
+
+    this.queryParamsSubscription = this.activatedRoute.queryParams.subscribe({
+      next: (queryParams) => {
+        console.log('Query Params: ', queryParams);
+      },
+    });
+
+    this.fragmentSubscription = this.activatedRoute.fragment.subscribe({
+      next: (fragment) => {
+        console.log('Fragment: ', fragment);
+      },
+    });
   }
 
   ngOnDestroy(): void {
     this.paramsSubscription.unsubscribe();
+    this.queryParamsSubscription.unsubscribe();
+    this.fragmentSubscription.unsubscribe();
   }
 }
