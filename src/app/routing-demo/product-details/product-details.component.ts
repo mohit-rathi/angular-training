@@ -25,6 +25,9 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
         this.productName = parameters['productName'];
       },
     });
+
+    console.log('Query Params: ', this.activatedRoute.snapshot.queryParams);
+    console.log('Fragment: ', this.activatedRoute.snapshot.fragment);
   }
 
   ngOnDestroy(): void {

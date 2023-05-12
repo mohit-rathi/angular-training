@@ -16,7 +16,7 @@ export class RouteHomeComponent {
   public goToProductDetailsWithQueryParamsAndFragment(): void {
     this.router.navigate(['/products', '100', 'Laptop'], {
       queryParams: {
-        isProduct: true,
+        isProductDetails: true,
         isAllowedEditing: false,
       },
       fragment: 'loading',
