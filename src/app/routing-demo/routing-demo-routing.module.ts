@@ -10,12 +10,16 @@ import { RouteAccountComponent } from './route-account/route-account.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 
+// guards
+import { AuthGuard } from './guards/auth.guard';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: RouteHomeComponent },
   {
     path: 'products',
     component: RouteProductComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: ':id/:productName', component: ProductDetailsComponent },
     ],
