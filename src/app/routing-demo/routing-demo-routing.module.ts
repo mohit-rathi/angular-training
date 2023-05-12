@@ -13,8 +13,13 @@ import { RouteNotFoundComponent } from './route-not-found/route-not-found.compon
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: RouteHomeComponent },
-  { path: 'products', component: RouteProductComponent },
-  { path: 'products/:id/:productName', component: ProductDetailsComponent },
+  {
+    path: 'products',
+    component: RouteProductComponent,
+    children: [
+      { path: ':id/:productName', component: ProductDetailsComponent },
+    ],
+  },
   { path: 'account', component: RouteAccountComponent },
   { path: '**', component: RouteNotFoundComponent },
 ];
