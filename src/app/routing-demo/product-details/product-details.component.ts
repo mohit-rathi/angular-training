@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -13,7 +13,15 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.productId = this.activatedRoute.snapshot.params['id'];
+    this.productId = parseInt(this.activatedRoute.snapshot.params['id']);
     this.productName = this.activatedRoute.snapshot.params['productName'];
+
+    this.activatedRoute.params.subscribe({
+      next: (parameters: Params) => {
+        console.log(parameters);
+        this.productId = parseInt(parameters['id']);
+        this.productName = parameters['productName'];
+      },
+    });
   }
 }
