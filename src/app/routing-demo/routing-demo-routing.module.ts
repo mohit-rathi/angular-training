@@ -12,6 +12,7 @@ import { RouteNotFoundComponent } from './route-not-found/route-not-found.compon
 
 // guards
 import { AuthGuard } from './guards/auth.guard';
+import { RoleGuard } from './guards/role.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
     path: 'products',
     component: RouteProductComponent,
     canActivate: [AuthGuard],
+    canActivateChild: [RoleGuard],
     children: [
       { path: ':id/:productName', component: ProductDetailsComponent },
     ],

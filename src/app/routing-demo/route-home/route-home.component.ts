@@ -29,4 +29,12 @@ export class RouteHomeComponent {
   public onLogin() {
     this._authService.login();
   }
+
+  public onSetAdmin() {
+    this._authService.setAdmin();
+  }
+
+  public onRemoveAdmin() {
+    this._authService.removeAdmin();
+  }
 }
