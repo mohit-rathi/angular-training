@@ -9,7 +9,8 @@ import { RouteProductComponent } from './route-product/route-product.component';
 import { RouteAccountComponent } from './route-account/route-account.component';
 
 const routes: Routes = [
-  { path: '', component: RouteHomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: RouteHomeComponent },
   { path: 'products', component: RouteProductComponent },
   { path: 'account', component: RouteAccountComponent },
 ];

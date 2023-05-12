@@ -4,24 +4,27 @@ import { CommonModule } from '@angular/common';
 import { RoutingDemoRoutingModule } from './routing-demo-routing.module';
 
 // components
-import { RouteHomeComponent } from './route-home/route-home.component';
-import { RouteAccountComponent } from './route-account/route-account.component';
-import { RouteProductComponent } from './route-product/route-product.component';
 import { RouteDashboardComponent } from './route-dashboard/route-dashboard.component';
+import { RouteHomeComponent } from './route-home/route-home.component';
+import { RouteProductComponent } from './route-product/route-product.component';
+import { RouteAccountComponent } from './route-account/route-account.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
-    RouteHomeComponent,
-    RouteAccountComponent,
-    RouteProductComponent,
     RouteDashboardComponent,
+    RouteHomeComponent,
+    RouteProductComponent,
+    RouteAccountComponent,
+    ProductDetailsComponent,
   ],
   imports: [CommonModule, RoutingDemoRoutingModule],
   exports: [
-    RouteHomeComponent,
-    RouteAccountComponent,
-    RouteProductComponent,
     RouteDashboardComponent,
+    RouteHomeComponent,
+    RouteProductComponent,
+    RouteAccountComponent,
+    ProductDetailsComponent,
   ],
 })
 export class RoutingDemoModule {}
