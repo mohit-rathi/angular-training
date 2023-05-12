@@ -11,9 +11,27 @@
   Dolorum odio itaque dolore enim ad! Fuga hic expedita at asperiores dicta
   perspiciatis cupiditate voluptas nulla. Illum, quam incidunt.
 </p>
-<button class="btn btn-primary me-3" type="button" routerLink="/products">
-  Go To Products
-</button>
-<button class="btn btn-primary" type="button" (click)="goToProducts()">
-  Go To Products Programatically
-</button>
+<div class="row gy-3">
+  <button class="btn btn-primary col-12" type="button" routerLink="/products">
+    Go To Products
+  </button>
+  <button class="btn btn-primary col-12" type="button" (click)="goToProducts()">
+    Go To Products Programatically
+  </button>
+  <button
+    class="btn btn-primary col-12"
+    type="button"
+    [routerLink]="['/products', '100', 'Laptop']"
+    [queryParams]="{ isProductDetails: true, isAllowedEditing: false }"
+    fragment="loading"
+  >
+    Go To ProductDetails with Query Params and Fragment
+  </button>
+  <!-- <button
+    class="btn btn-primary col-12"
+    type="button"
+    (click)="goToProductDetailsWithQueryParamsAndFragment()"
+  >
+    Go To ProductDetails with Query Params and Fragment Programatically
+  </button> -->
+</div>

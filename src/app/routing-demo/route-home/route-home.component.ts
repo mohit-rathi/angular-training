@@ -12,4 +12,8 @@ export class RouteHomeComponent {
   public goToProducts(): void {
     this.router.navigate(['/products']);
   }
+
+  // public goToProductDetailsWithQueryParamsAndFragment(): void {
+  //   this.router.navigate(['/products', '100', 'Laptop'], { queryParams: {}, fragment: 'loading' });
+  // }
 }
