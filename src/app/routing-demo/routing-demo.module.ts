@@ -9,6 +9,7 @@ import { RouteHomeComponent } from './route-home/route-home.component';
 import { RouteProductComponent } from './route-product/route-product.component';
 import { RouteAccountComponent } from './route-account/route-account.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     RouteProductComponent,
     RouteAccountComponent,
     ProductDetailsComponent,
+    RouteNotFoundComponent,
   ],
   imports: [CommonModule, RoutingDemoRoutingModule],
   exports: [
@@ -25,6 +27,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     RouteProductComponent,
     RouteAccountComponent,
     ProductDetailsComponent,
+    RouteNotFoundComponent,
   ],
 })
 export class RoutingDemoModule {}
