@@ -13,7 +13,13 @@ export class RouteHomeComponent {
     this.router.navigate(['/products']);
   }
 
-  // public goToProductDetailsWithQueryParamsAndFragment(): void {
-  //   this.router.navigate(['/products', '100', 'Laptop'], { queryParams: {}, fragment: 'loading' });
-  // }
+  public goToProductDetailsWithQueryParamsAndFragment(): void {
+    this.router.navigate(['/products', '100', 'Laptop'], {
+      queryParams: {
+        isProduct: true,
+        isAllowedEditing: false,
+      },
+      fragment: 'loading',
+    });
+  }
 }
