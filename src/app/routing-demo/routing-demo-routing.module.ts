@@ -32,7 +32,11 @@ const routes: Routes = [
     component: RouteAccountComponent,
     canDeactivate: [SaveGuard],
   },
-  { path: '**', component: RouteNotFoundComponent },
+  {
+    path: '**',
+    component: RouteNotFoundComponent,
+    data: { statusCode: 404, statusMessage: 'Route Not Found' },
+  },
 ];
 
 @NgModule({
