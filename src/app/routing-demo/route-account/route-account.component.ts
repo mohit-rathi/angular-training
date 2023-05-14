@@ -1,13 +1,34 @@
-import { Component } from '@angular/core';
-import { CanDeactivateFn } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-route-account',
   templateUrl: './route-account.component.html',
   styleUrls: ['./route-account.component.scss'],
 })
-export class RouteAccountComponent {
-  isSaved: boolean = false;
+export class RouteAccountComponent implements OnInit {
+  public accountDetail = {} as {
+    id: number;
+    owner: string;
+    isActive: boolean;
+  };
+  public isSaved: boolean = false;
+  public resolverSubscription!: Subscription;
+
+  constructor(private _activatedRoute: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.resolverSubscription = this._activatedRoute.data.subscribe({
+      next: (data) => {
+        this.accountDetail = data['accountDetailResolver'];
+      },
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.resolverSubscription.unsubscribe();
+  }
 
   canDeactivate(): boolean {
     if (this.isSaved) {

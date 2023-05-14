@@ -15,6 +15,9 @@ import { AuthGuard } from './guards/auth.guard';
 import { RoleGuard } from './guards/role.guard';
 import { SaveGuard } from './guards/save.guard';
 
+// resolvers
+import { AccountDetailResolver } from './resolvers/account-detail.resolver';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: RouteHomeComponent },
@@ -31,6 +34,7 @@ const routes: Routes = [
     path: 'account',
     component: RouteAccountComponent,
     canDeactivate: [SaveGuard],
+    resolve: { accountDetailResolver: AccountDetailResolver },
   },
   {
     path: '**',

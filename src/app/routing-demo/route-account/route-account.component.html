@@ -1,4 +1,8 @@
 <h4 class="mb-3">Account</h4>
+<h5 class="mb-3">Account Details</h5>
+<p>{{ accountDetail.id }}</p>
+<p>{{ accountDetail.owner }}</p>
+<p>{{ accountDetail.isActive ? "Active" : "Inactive" }}</p>
 <button class="btn btn-primary" (click)="isSaved = !isSaved">
   {{ isSaved ? "Unsave Changes" : "Save Changes" }}
 </button>
